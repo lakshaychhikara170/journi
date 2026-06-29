@@ -162,17 +162,6 @@ export function Sidebar() {
         <div className="mb-4 px-2">
           <InstallAppButton />
         </div>
-        
-        {/* Dev Mode: Temp Animation Trigger */}
-        <div className="mb-4 px-2">
-          <Button 
-            variant="outline" 
-            className="w-full text-xs font-mono border-dashed border-primary/50 text-primary hover:bg-primary/10"
-            onClick={() => window.dispatchEvent(new CustomEvent('test-celebration', { detail: { streak: 100 } }))}
-          >
-            [Dev] Test Animation
-          </Button>
-        </div>
       </div>
     </div>
   )
