@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { Search } from 'lucide-react'
 import { FriendRequestsMenu } from '@/components/layout/friend-requests-menu'
 import { NotificationsMenu } from '@/components/layout/notifications-menu'
+import { MobileMenuDrawer } from '@/components/layout/mobile-menu-drawer'
 
 export function Header() {
   const pathname = usePathname()
@@ -39,10 +40,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between h-16 px-4 sm:px-6 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="flex items-center gap-2 lg:hidden">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center text-white text-sm shadow-md">
-          📔
-        </div>
-        <h1 className="text-xl font-bold font-[family-name:var(--font-heading)] gradient-text tracking-tight">Journi</h1>
+        <MobileMenuDrawer />
+        <h1 className="text-xl font-bold font-[family-name:var(--font-heading)] gradient-text tracking-tight ml-1">Journi</h1>
       </div>
       
       <div className="hidden lg:block">
