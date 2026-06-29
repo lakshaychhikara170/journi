@@ -10,7 +10,8 @@ import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { toast } from 'sonner'
-import { Download, Upload, Trash2, LogOut, Loader2, AlertTriangle, ShieldCheck, Bell, Lock, Globe, Mail } from 'lucide-react'
+import { Download, Upload, Trash2, LogOut, Loader2, AlertTriangle, ShieldCheck, Bell, Lock, Globe, Mail, Smartphone } from 'lucide-react'
+import { InstallAppButton } from '@/components/install-app-button'
 
 // Simple custom Switch component
 function Switch({ checked, onCheckedChange }: { checked: boolean, onCheckedChange: (c: boolean) => void }) {
@@ -243,6 +244,20 @@ export default function SettingsPage() {
             </Link>
           </section>
         )}
+
+        {/* App Installation Section */}
+        <section className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-2xl p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <Smartphone className="w-6 h-6 text-primary" />
+            <h2 className="text-xl font-bold">Install Journi App</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-6">
+            Install Journi on your device for a faster, app-like experience. You can access it directly from your home screen!
+          </p>
+          <div className="flex items-center">
+            <InstallAppButton />
+          </div>
+        </section>
 
         {/* Preferences Section */}
         <section className="bg-card/50 backdrop-blur-sm border rounded-2xl p-6">

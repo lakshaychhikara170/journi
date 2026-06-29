@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 import { OfflineSyncProvider } from '@/components/offline-sync-provider'
 import { AuthProvider } from '@/components/auth-provider'
-import Script from 'next/script'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -33,19 +33,7 @@ export default function RootLayout({
       <head>
       </head>
       <body className={`min-h-screen bg-background text-foreground antialiased ${inter.variable} ${outfit.variable}`}>
-        <Script id="sw-registration" strategy="afterInteractive">
-          {`
-            if ('serviceWorker' in navigator) {
-              window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                  console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                  console.log('ServiceWorker registration failed: ', err);
-                });
-              });
-            }
-          `}
-        </Script>
+
         <ThemeProvider>
           <AuthProvider>
             <OfflineSyncProvider>

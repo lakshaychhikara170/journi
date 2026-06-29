@@ -8,6 +8,7 @@ import { useTheme } from '@/components/theme-provider'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { InstallAppButton } from '@/components/install-app-button'
 
 const navItems = [
   { name: 'Feed', href: '/feed', icon: Home },
@@ -157,6 +158,11 @@ export function Sidebar() {
             Logout
           </Button>
         </div>
+        {/* App Install Button */}
+        <div className="mb-4 px-2">
+          <InstallAppButton />
+        </div>
+        
         {/* Dev Mode: Temp Animation Trigger */}
         <div className="mb-4 px-2">
           <Button 
