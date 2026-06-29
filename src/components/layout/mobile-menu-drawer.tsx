@@ -31,10 +31,10 @@ export function MobileMenuDrawer() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="lg:hidden text-foreground">
-          <Menu className="h-6 w-6" />
-        </Button>
+      <SheetTrigger 
+        render={<Button variant="ghost" size="icon" className="lg:hidden text-foreground" />}
+      >
+        <Menu className="h-6 w-6" />
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] p-0 flex flex-col bg-card/95 backdrop-blur-xl border-r border-border">
         <SheetHeader className="p-6 border-b border-border/50 text-left">
