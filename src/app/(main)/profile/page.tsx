@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/hooks/use-auth'
+import Link from 'next/link'
 import { useAuthStore } from '@/stores/auth-store'
 import { createClient } from '@/lib/supabase/client'
 import { format } from 'date-fns'
 import { motion } from 'framer-motion'
 import confetti from 'canvas-confetti'
-import { Edit2, LogOut, Loader2, BookOpen, Users, Heart, Trophy, Flame } from 'lucide-react'
+import { Edit2, LogOut, Loader2, BookOpen, Users, Heart, Trophy, Flame, Settings } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import { EditProfileDialog } from '@/components/profile/edit-profile-dialog'
@@ -72,6 +73,15 @@ export default function ProfilePage() {
     <div className="max-w-3xl mx-auto space-y-6 animate-fade-in pb-12">
       {/* Profile Header Card */}
       <div className="glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        {/* Settings button - absolute positioned in top right */}
+        <div className="absolute top-4 right-4 z-20">
+          <Link href="/settings">
+            <Button variant="ghost" size="icon" className="rounded-full bg-background/20 hover:bg-background/40 backdrop-blur-md">
+              <Settings className="w-5 h-5 text-foreground" />
+            </Button>
+          </Link>
+        </div>
+
         <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-20 -mt-20" />
         <div className="absolute bottom-0 left-0 w-48 h-48 bg-violet-500/5 rounded-full blur-2xl -ml-10 -mb-10" />
         
