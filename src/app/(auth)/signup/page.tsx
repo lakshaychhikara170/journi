@@ -223,7 +223,6 @@ export default function SignupPage() {
             Sign Up
           </Button>
         </form>
-      </div>
 
       <p className="text-center text-sm text-muted-foreground">
         Already have an account?{' '}
